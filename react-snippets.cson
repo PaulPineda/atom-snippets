@@ -1,0 +1,44 @@
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+'.source.js':
+  'import':
+    'prefix': 'im'
+    'body': 'import $1 from \'$2\';$3'
+  'import React':
+    'prefix': 'imr'
+    'body': 'import React from \'react\';$1'
+  'import React with Component':
+    'prefix': 'imrc'
+    'body': 'import React, { Component } from \'react\';$1'
+  'create React class':
+    'prefix': 'crc'
+    'body': """
+      class $1 extends Component {
+        render(){
+          return $2;
+        };
+      }
+      """
+  'mocha describe':
+    'prefix': 'md'
+    'body': """
+      describe('$1', () =>{
+        $2
+      });
+      """
+  'mocha it':
+    'prefix': 'mi'
+    'body': """
+      it('$1', () =>{
+        $2
+      });$3
+      """
+  'mocha n - where n is a cistom descriptor':
+    'prefix': 'mn'
+    'body': """
+      $1('$2', () =>{
+        $3
+      });
+      """
